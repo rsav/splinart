@@ -1,11 +1,13 @@
 name: splinart-rs
+channels: 
+  - conda-forge
 dependencies:
   - notebook
   - sphinx
   - nbsphinx
 
 
-  
+
 
 
 
