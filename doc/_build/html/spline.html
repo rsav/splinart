@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Cubic Spline &mdash; splinart  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Splinart on a circle" href="notebooks/circle.html" />
+    <link rel="prev" title="Welcome to splinart’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> splinart
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Cubic Spline</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/circle.html">Splinart on a circle</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/modules.html">splinart</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">splinart</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Cubic Spline</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/spline.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="cubic-spline">
+<h1>Cubic Spline<a class="headerlink" href="#cubic-spline" title="Permalink to this headline">¶</a></h1>
+<p>We consider here a cubic spline passing through the points <span class="math notranslate nohighlight">\((x_i,y_i)\)</span> with <span class="math notranslate nohighlight">\(a=x_1&lt;\ldots&lt;x_n=b\)</span>, that is, a class function <span class="math notranslate nohighlight">\({\mathcal C}^2\)</span> on <span class="math notranslate nohighlight">\([a, b]\)</span> and each restriction at the interval <span class="math notranslate nohighlight">\([x_{i-1},x_i]\)</span>, <span class="math notranslate nohighlight">\(1\leq i\leq n\)</span>, is a polynomial of degree less than 3. We will note <span class="math notranslate nohighlight">\(S\)</span> such a spline. His equation is given by</p>
+<div class="math notranslate nohighlight">
+\[S_i(x) =  Ay_i + By_{i+1} + Cy''_i+ D y''_{i+1}, \qquad x_{i}\leq x\leq x_{i+1},\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[A = \frac{x_{i+1}-x}{x_{i+1} - x_i} \qquad \text{et} \qquad B = \frac{x-x_i}{x_{i+1} - x_i},\]</div>
+<div class="math notranslate nohighlight">
+\[C = \frac{1}{6}\left(A^3-A\right)\left(x_{i+1}-x_i\right)^2 \qquad \text{et} \qquad D = \frac{1}{6}\left(B^3-B\right)\left(x_{i+1}-x_i\right)^2.\]</div>
+<p>If we derive this equation twice with respect to <span class="math notranslate nohighlight">\(x\)</span>, we get</p>
+<div class="math notranslate nohighlight">
+\[\frac{d^2S(x)}{d x} = Ay''_i + By''_{i+1}.\]</div>
+<p>Since <span class="math notranslate nohighlight">\(A = 1\)</span> in <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(A = 0\)</span> in <span class="math notranslate nohighlight">\(x_ {i + 1}\)</span> and conversely for <span class="math notranslate nohighlight">\(B\)</span>, we can see that the second derivative is continuous at the interface of the two intervals <span class="math notranslate nohighlight">\([x_{i-1}, x_{i}]\)</span> and <span class="math notranslate nohighlight">\([x_{i}, x_{i + 1}]\)</span>.</p>
+<p>It remains to determine the expression of <span class="math notranslate nohighlight">\(y''_i\)</span>. To do this, we will calculate the first derivative and impose that it is continuous at the interface of two intervals. The first derivative is given by</p>
+<div class="math notranslate nohighlight">
+\[\frac{dy}{dx}=\frac{y_{i+1}-y_{i}}{x_{i+1}-x_{i}}-\frac{3A^2-1}{6}(x_{i+1}-x_{i})y''_i+\frac{3B^2-1}{6}(x_{i+1}-x_{i})y''_{i+1}.\]</div>
+<p>We therefore want the value of the first derivative in <span class="math notranslate nohighlight">\(x = x_i\)</span> over the interval <span class="math notranslate nohighlight">\([x_{i-1}, x_{i}]\)</span> to be equal to the value of the first derivative in <span class="math notranslate nohighlight">\(x = x_i\)</span> over the interval <span class="math notranslate nohighlight">\([x_{i}, x_{i + 1}]\)</span>; which gives us for <span class="math notranslate nohighlight">\(i = 2, \dots, n-1\)</span></p>
+<div class="math notranslate nohighlight">
+\[a_iy''_{i-1}+b_iy''_i+c_iy''_{i+1}=d_i,\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{l}
+a_i = \frac{x_i-x_{i-1}}{x_{i+1}-x_{i-1}}\\
+b_i = 2\\
+c_i = \frac{x_{i+1}-x_{i}}{x_{i+1}-x_{i-1}}\\
+d_i = \frac{6}{x_{i+1}-x_{i-1}}\left(\frac{y_{i+1}-y_{i}}{x_{i+1}-x_{i}}-\frac{y_{i}-y_{i-1}}{x_{i}-x_{i-1}}\right).
+\end{array}\end{split}\]</div>
+<p>So we have <span class="math notranslate nohighlight">\(n-2\)</span> linear equations to calculate the <span class="math notranslate nohighlight">\(n\)</span> unknowns <span class="math notranslate nohighlight">\(y''_i\)</span> for <span class="math notranslate nohighlight">\(i = 1, \dots, n\)</span>. So we have to make a choice for the first and last values ​​and we will take them equal to zero. We can recognize the resolution of a system with a tridiagonal matrix. It is then easy to solve it by using the algorithm of Thomas which one recalls the principle</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}c'_i=\left\{
+\begin{array}{lr}
+\frac{ci}{b_i}&amp;i=1\\
+\frac{c_i}{b_i-a_ic'_{i-1}}&amp;i=2,\dots,n.
+\end{array}
+\right.\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}d'_i=\left\{
+\begin{array}{lr}
+\frac{di}{b_i}&amp;i=1\\
+\frac{d_i-a_id'_{i-1}}{b_i-a_ic'_{i-1}}&amp;i=2,\dots,n.
+\end{array}
+\right.\end{split}\]</div>
+<p>The solution is then obtained by the formula</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{l}
+y''_n = d'_n \\
+y''_i = d'_i-c'_iy''_{i+1} \qquad \text{pour} \qquad i=n-1,\dots,1.
+\end{array}\end{split}\]</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="notebooks/circle.html" class="btn btn-neutral float-right" title="Splinart on a circle" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to splinart’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Loic Gouarin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

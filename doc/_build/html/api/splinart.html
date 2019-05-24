@@ -1,0 +1,395 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>splinart package &mdash; splinart  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="splinart.shapes package" href="splinart.shapes.html" />
+    <link rel="prev" title="splinart" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> splinart
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../spline.html">Cubic Spline</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/circle.html">Splinart on a circle</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">splinart</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">splinart package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="splinart.shapes.html">splinart.shapes package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="splinart.spline.html">splinart.spline package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-splinart.color">splinart.color module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-splinart.compute">splinart.compute module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-splinart.draw">splinart.draw module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-splinart.version">splinart.version module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-splinart">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">splinart</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">splinart</a> &raquo;</li>
+        
+      <li>splinart package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/splinart.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="splinart-package">
+<h1>splinart package<a class="headerlink" href="#splinart-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="splinart.shapes.html">splinart.shapes package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="splinart.shapes.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splinart.shapes.html#module-splinart.shapes.base">splinart.shapes.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splinart.shapes.html#module-splinart.shapes">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="splinart.spline.html">splinart.spline package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="splinart.spline.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splinart.spline.html#module-splinart.spline.spline">splinart.spline.spline module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splinart.spline.html#module-splinart.spline.splint">splinart.spline.splint module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splinart.spline.html#module-splinart.spline">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-splinart.color">
+<span id="splinart-color-module"></span><h2>splinart.color module<a class="headerlink" href="#module-splinart.color" title="Permalink to this headline">¶</a></h2>
+<p>Define the default color of the output.</p>
+</div>
+<div class="section" id="module-splinart.compute">
+<span id="splinart-compute-module"></span><h2>splinart.compute module<a class="headerlink" href="#module-splinart.compute" title="Permalink to this headline">¶</a></h2>
+<p>Material to update the output image using a cunbic spline equation.</p>
+<dl class="function">
+<dt id="splinart.compute.update_img">
+<code class="descclassname">splinart.compute.</code><code class="descname">update_img</code><span class="sig-paren">(</span><em>img</em>, <em>path</em>, <em>xs_func</em>, <em>x=None</em>, <em>nrep=300</em>, <em>periodic=True</em>, <em>scale_color=0.005</em>, <em>color=(0.0</em>, <em>0.41568627450980394</em>, <em>0.6196078431372549</em>, <em>1.0)</em>, <em>scale_value=1e-05</em><span class="sig-paren">)</span><a class="headerlink" href="#splinart.compute.update_img" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the image using a cubic spline on a shape.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>img</strong> (<em>np.ndarray</em>) – The output image.</p></li>
+<li><p><strong>path</strong> (<em>np.ndarray</em>) – The y coordinate of the cubic spline if x is not None,
+the coordinates of the cubic spline if x is None.</p></li>
+<li><p><strong>x</strong> (<em>np.ndarray</em>) – The x coordinates of the cubic spline if given.
+(the default value is None)</p></li>
+<li><p><strong>xs_func</strong> (<em>function</em>) – The function that return the x coordinate of the sampling points
+where to compute the y coordinates given the spline equation.</p></li>
+<li><p><strong>nrep</strong> (<em>int</em>) – Number of iteration (default is 300).</p></li>
+<li><p><strong>periodic</strong> (<em>bool</em>) – Define if the first and last points of the path must be equal
+(default is True).</p></li>
+<li><p><strong>scale_color</strong> (<em>float</em>) – Scale the given color (default is 0.005).</p></li>
+<li><p><strong>color</strong> (<em>list</em><em>(</em><em>4</em><em>)</em>) – Define the RGBA color to plot the spline.</p></li>
+<li><p><strong>scale_value</strong> (<em>float</em>) – Rescale the random radius (default value is 0.00001).</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#splinart.compute.update_path" title="splinart.compute.update_path"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_path()</span></code></a></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="splinart.compute.update_path">
+<code class="descclassname">splinart.compute.</code><code class="descname">update_path</code><span class="sig-paren">(</span><em>path</em>, <em>periodic=False</em>, <em>scale_value=1e-05</em><span class="sig-paren">)</span><a class="headerlink" href="#splinart.compute.update_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the path of the spline.</p>
+<p>We move each point of the path by a random vector
+defined inside a circle where</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>the center is the point of the path</p></li>
+<li><p>the radius is a random number between [-1, 1]</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>np.ndarray</em>) – The y coordinate of the cubic spline.</p></li>
+<li><p><strong>periodic</strong> (<em>bool</em>) – If True, the first and the last points of the
+path are the same (the default value is False).</p></li>
+<li><p><strong>scale_value</strong> (<em>float</em>) – Rescale the random radius (default value is 0.00001).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-splinart.draw">
+<span id="splinart-draw-module"></span><h2>splinart.draw module<a class="headerlink" href="#module-splinart.draw" title="Permalink to this headline">¶</a></h2>
+<p>Material to update the image with given points
+and save or plot this image.</p>
+<dl class="function">
+<dt id="splinart.draw.draw_pixel">
+<code class="descclassname">splinart.draw.</code><code class="descname">draw_pixel</code><span class="sig-paren">(</span><em>img</em>, <em>xs</em>, <em>ys</em>, <em>scale_color=0.0005</em>, <em>color=(0.0</em>, <em>0.41568627450980394</em>, <em>0.6196078431372549</em>, <em>1.0)</em><span class="sig-paren">)</span><a class="headerlink" href="#splinart.draw.draw_pixel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add pixels on the image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>img</strong> (<em>np.ndarray</em>) – The image where we add pixels.</p></li>
+<li><p><strong>xs</strong> (<em>np.ndarray</em>) – The x coordinate of the pixels to add.</p></li>
+<li><p><strong>ys</strong> (<em>np.ndarray</em>) – The y coordinate of the pixels to add.</p></li>
+<li><p><strong>scale_color</strong> (<em>float</em>) – Scale the given color (default is 0.0005).</p></li>
+<li><p><strong>color</strong> (<em>list</em><em>(</em><em>4</em><em>)</em>) – Define the RGBA color of the pixels.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="splinart.draw.save_img">
+<code class="descclassname">splinart.draw.</code><code class="descname">save_img</code><span class="sig-paren">(</span><em>img</em>, <em>path</em>, <em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#splinart.draw.save_img" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the image in a png file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>img</strong> (<em>np.ndarray</em>) – The image to save.</p></li>
+<li><p><strong>path</strong> (<em>str</em>) – The save directory.</p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – The file name with the png extension.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="splinart.draw.show_img">
+<code class="descclassname">splinart.draw.</code><code class="descname">show_img</code><span class="sig-paren">(</span><em>img</em><span class="sig-paren">)</span><a class="headerlink" href="#splinart.draw.show_img" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the image using matplotlib.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>img</strong> (<em>np.ndarray</em>) – The image to save.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-splinart.version">
+<span id="splinart-version-module"></span><h2>splinart.version module<a class="headerlink" href="#module-splinart.version" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-splinart">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-splinart" title="Permalink to this headline">¶</a></h2>
+<p>Splinart package</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="splinart.shapes.html" class="btn btn-neutral float-right" title="splinart.shapes package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modules.html" class="btn btn-neutral float-left" title="splinart" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Loic Gouarin
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
