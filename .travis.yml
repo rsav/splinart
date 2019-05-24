@@ -1,4 +1,5 @@
 %%file .travis.yml
+# This file tells travis-ci.com how to do the continuous integration
 
 language: python
 
@@ -21,4 +22,5 @@ install:
 script:
   # Your test script goes here
   - pytest tests
+
 
