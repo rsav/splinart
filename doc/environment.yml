@@ -1,5 +1,12 @@
-name: splinart
+name: splinart-rs
 dependencies:
   - notebook
   - sphinx
   - nbsphinx
+
+
+  
+
+
+
+
